@@ -1,5 +1,5 @@
 {% set name = "autokeras" %}
-{% set version = "1.0.20" %}
+{% set version = "2.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/autokeras-{{ version }}.tar.gz
-  sha256: 3d0f09629abb9b98f9059e3c8b9d39b4acd7f6dcde6d0584146a02035159141a
+  sha256: 40f6e157f18655895cbaa151d4172744d73e3b0e7356834c509e09ba90efb7d0
 
 build:
   number: 0
