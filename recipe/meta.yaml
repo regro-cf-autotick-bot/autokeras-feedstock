@@ -6,26 +6,28 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/autokeras-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/autokeras-{{ version }}.tar.gz
   sha256: 3d0f09629abb9b98f9059e3c8b9d39b4acd7f6dcde6d0584146a02035159141a
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - packaging
     - tensorflow >=2.8.0
     - keras-tuner >=1.1.0
     - pandas
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - autokeras
     - autokeras.graph
